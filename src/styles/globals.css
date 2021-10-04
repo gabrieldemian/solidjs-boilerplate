@@ -1,0 +1,54 @@
+:root {
+  /* UI & surface colors */
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #8c8c8c
+
+  --text-primary: #242424;
+  --text-secondary: #585858;
+
+  /* Brand colors */
+  --red-violet: #da18a3;
+  --gradient: linear-gradient(90deg, #eb1484, #c81cc5) border-box;
+}
+
+.dark,
+[data-theme='dark'] {
+  
+  /* UI & surface colors */
+
+  /* --selection-color: var(--red-violet);
+  --selection-bg: purple; */
+
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+
+  --text-primary: #ffffff;
+  --text-secondary: #8c8c8c;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  .container {
+    width: clamp(16rem, 90vw, 75rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .container-60ch {
+    @apply container;
+    max-width: 60ch;
+  }
+}
+
+html,
+body {
+  font-family: Poppins;
+  @apply bg-primary text-primary break-words;
+}
